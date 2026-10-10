@@ -1,0 +1,90 @@
+[
+  {
+    "id": "MED-001",
+    "nombre": "Vitamina C 1000 mg",
+    "categoria": "Vitaminas",
+    "caracteristicas": ["Frasco x 30 tabletas", "Liberación prolongada", "Sabor naranja"],
+    "precio": 18900,
+    "moneda": "COP",
+    "existencias": 24,
+    "stockMinimo": 8,
+    "imagen": "images/vitamina-c.svg"
+  },
+  {
+    "id": "MED-002",
+    "nombre": "Ibuprofeno 400 mg",
+    "categoria": "Analgésicos",
+    "caracteristicas": ["Caja x 10 cápsulas", "Acción rápida"],
+    "precio": 5500,
+    "moneda": "COP",
+    "existencias": 5,
+    "stockMinimo": 10,
+    "imagen": "images/ibuprofeno.svg"
+  },
+  {
+    "id": "MED-003",
+    "nombre": "Termómetro digital",
+    "categoria": "Equipos médicos",
+    "caracteristicas": ["Lectura en 10 segundos", "Alarma de fiebre", "Resistente al agua"],
+    "precio": 12000,
+    "moneda": "COP",
+    "existencias": 0,
+    "stockMinimo": 5,
+    "imagen": "images/termometro.svg"
+  },
+  {
+    "id": "MED-004",
+    "nombre": "Crema hidratante facial",
+    "categoria": "Cuidado personal",
+    "caracteristicas": ["Presentación 50 ml", "Para piel seca", "Hipoalergénica"],
+    "precio": 45000,
+    "moneda": "COP",
+    "existencias": 15,
+    "stockMinimo": 5,
+    "imagen": "images/crema-hidratante.svg"
+  },
+  {
+    "id": "MED-005",
+    "nombre": "Jarabe para la tos con miel",
+    "categoria": "Respiratorio",
+    "caracteristicas": ["Frasco 120 ml", "Sabor a miel", "Incluye vaso dosificador"],
+    "precio": 16500,
+    "moneda": "COP",
+    "existencias": 0,
+    "stockMinimo": 3,
+    "imagen": "images/jarabe-tos.svg"
+  },
+  {
+    "id": "MED-006",
+    "nombre": "Venda elástica 5x5",
+    "categoria": "Primeros auxilios",
+    "caracteristicas": ["Presentación 5 cm x 5 m", "Compresión media", "Reutilizable"],
+    "precio": 3200,
+    "moneda": "COP",
+    "existencias": 8,
+    "stockMinimo": 15,
+    "imagen": "images/venda-elastica.svg"
+  },
+  {
+    "id": "MED-007",
+    "nombre": "Paracetamol 500 mg",
+    "categoria": "Analgésicos",
+    "caracteristicas": ["Caja x 20 tabletas", "Alivio del dolor"],
+    "precio": 4800,
+    "moneda": "COP",
+    "existencias": 120,
+    "stockMinimo": 20,
+    "imagen": "images/paracetamol.svg"
+  },
+  {
+    "id": "MED-008",
+    "nombre": "Alcohol antiséptico 70%",
+    "categoria": "Primeros auxilios",
+    "caracteristicas": ["Frasco 250 ml", "Uso tópico", "Acción rápida"],
+    "precio": 6200,
+    "moneda": "COP",
+    "existencias": 3,
+    "stockMinimo": 10,
+    "imagen": "images/alcohol-antiseptico.svg"
+  }
+]
