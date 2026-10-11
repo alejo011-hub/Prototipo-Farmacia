@@ -8,7 +8,7 @@
     "moneda": "COP",
     "existencias": 24,
     "stockMinimo": 8,
-    "imagen": "images/vitamina-c.svg"
+    "imagen": "https://placehold.co/400x300/fef08a/854d0e?text=Vitamina+C"
   },
   {
     "id": "MED-002",
@@ -19,7 +19,7 @@
     "moneda": "COP",
     "existencias": 5,
     "stockMinimo": 10,
-    "imagen": "images/ibuprofeno.svg"
+    "imagen": "https://placehold.co/400x300/fecaca/991b1b?text=Ibuprofeno"
   },
   {
     "id": "MED-003",
@@ -30,7 +30,7 @@
     "moneda": "COP",
     "existencias": 0,
     "stockMinimo": 5,
-    "imagen": "images/termometro.svg"
+    "imagen": "https://placehold.co/400x300/e0f2fe/0369a1?text=Termometro"
   },
   {
     "id": "MED-004",
@@ -41,7 +41,7 @@
     "moneda": "COP",
     "existencias": 15,
     "stockMinimo": 5,
-    "imagen": "images/crema-hidratante.svg"
+    "imagen": "https://placehold.co/400x300/fce7f3/9d174d?text=Crema+Facial"
   },
   {
     "id": "MED-005",
@@ -52,7 +52,7 @@
     "moneda": "COP",
     "existencias": 0,
     "stockMinimo": 3,
-    "imagen": "images/jarabe-tos.svg"
+    "imagen": "https://placehold.co/400x300/fed7aa/9a3412?text=Jarabe+Miel"
   },
   {
     "id": "MED-006",
@@ -63,7 +63,7 @@
     "moneda": "COP",
     "existencias": 8,
     "stockMinimo": 15,
-    "imagen": "images/venda-elastica.svg"
+    "imagen": "https://placehold.co/400x300/e2e8f0/334155?text=Venda+Elastica"
   },
   {
     "id": "MED-007",
@@ -74,7 +74,7 @@
     "moneda": "COP",
     "existencias": 120,
     "stockMinimo": 20,
-    "imagen": "images/paracetamol.svg"
+    "imagen": "https://placehold.co/400x300/fecaca/991b1b?text=Paracetamol"
   },
   {
     "id": "MED-008",
@@ -85,6 +85,6 @@
     "moneda": "COP",
     "existencias": 3,
     "stockMinimo": 10,
-    "imagen": "images/alcohol-antiseptico.svg"
+    "imagen": "https://placehold.co/400x300/e0f2fe/0369a1?text=Alcohol+70%25"
   }
 ]
