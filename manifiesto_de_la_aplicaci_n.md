@@ -1,0 +1,23 @@
+{
+  "name": "Droguería Ermita",
+  "short_name": "Ermita",
+  "description": "Catálogo y asistencia de Droguería Ermita",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "https://placehold.co/192x192/f97316/ffffff.png?text=DE",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://placehold.co/512x512/f97316/ffffff.png?text=DE",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
