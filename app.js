@@ -379,7 +379,18 @@ function openProductModal(product) {
     <button type="button" class="add-to-cart-btn" id="modalAddToCartBtn" ${agotado ? 'disabled' : ''}>
       ${agotado ? 'Agotado' : 'Agregar al carrito'}
     </button>
+    ${typeof window.openAssistant === 'function'
+    ? '<button type="button" class="ask-assistant-btn" id="modalAskBtn">💬 Preguntar al asistente sobre este producto</button>'
+    : ''}
   `;
+
+  const askBtn = document.getElementById('modalAskBtn');
+  if (askBtn) {
+    askBtn.addEventListener('click', () => {
+      closeModal(productModal);
+      window.openAssistant(product.id);
+    });
+  }
 
   if (!agotado) {
     document.getElementById('modalAddToCartBtn').addEventListener('click', () => addToCart(product.id));

@@ -1,0 +1,158 @@
+{
+  "aviso": "Información de referencia general para adultos sanos. No reemplaza la etiqueta del producto ni la indicación de un médico o químico farmacéutico. Debe ser validada por el responsable técnico de la droguería antes de su uso real.",
+  "productos": {
+    "MED-001": {
+      "uso": "Suplemento de vitamina C para complementar la alimentación.",
+      "dosis": {
+        "adultos": "1 tableta (1000 mg) una vez al día, con o después de una comida.",
+        "intervaloHoras": "24",
+        "maximoDiario": "No pases de 1 tableta al día: el límite superior general para adultos es de 2000 mg de vitamina C en 24 horas, contando otros suplementos.",
+        "calculo": { "unidadesPorToma": 1, "tomasPorDia": 1 },
+        "duracionMaximaDias": null
+      },
+      "recomendaciones": [
+        "Tómala con comida para reducir molestias en el estómago.",
+        "Una dosis mayor no da más beneficio y puede causar diarrea o malestar digestivo."
+      ],
+      "precauciones": [
+        "Consulta antes de usarla si has tenido cálculos renales o tienes enfermedad del riñón."
+      ],
+      "consultarSi": [
+        "Si vas a usarla de forma continua por más de unas semanas.",
+        "Si tomas otros medicamentos o suplementos."
+      ],
+      "complementarios": []
+    },
+    "MED-002": {
+      "uso": "Alivio del dolor leve a moderado, la inflamación y la fiebre.",
+      "dosis": {
+        "adultos": "1 cápsula (400 mg) cada 8 horas, solo mientras haya dolor o fiebre.",
+        "intervaloHoras": "8",
+        "maximoDiario": "Máximo 3 cápsulas (1200 mg) en 24 horas sin indicación médica.",
+        "calculo": { "unidadesPorToma": 1, "tomasPorDia": 3 },
+        "duracionMaximaDias": 5
+      },
+      "recomendaciones": [
+        "Tómalo con comida o con un vaso de leche para proteger el estómago.",
+        "Usa la dosis más baja que te alivie y durante el menor tiempo posible.",
+        "Bebe suficiente agua durante el día."
+      ],
+      "precauciones": [
+        "No lo uses sin hablar antes con un médico si tienes úlcera o sangrado de estómago, alergia a la aspirina u otros antiinflamatorios, o enfermedad del riñón, hígado o corazón.",
+        "Evítalo en el embarazo y la lactancia sin indicación médica.",
+        "No lo combines con otros antiinflamatorios (aspirina, naproxeno, diclofenaco) ni con anticoagulantes sin consultar."
+      ],
+      "consultarSi": [
+        "Si el dolor dura más de 5 días o la fiebre más de 3 días.",
+        "Si aparece dolor fuerte de estómago, heces negras, hinchazón o dificultad para respirar."
+      ],
+      "complementarios": ["MED-003"],
+      "alternativas": ["MED-007"]
+    },
+    "MED-003": {
+      "uso": "Medir la temperatura corporal.",
+      "instruccionesDeUso": "Colócalo según su manual (axila, boca u oído, según el modelo), espera el aviso sonoro y lee el resultado.",
+      "recomendaciones": [
+        "Una temperatura de 38 °C o más se considera fiebre.",
+        "Límpialo con alcohol antes y después de cada uso.",
+        "Mide en reposo, no justo después de hacer ejercicio, bañarte con agua caliente o tomar bebidas calientes."
+      ],
+      "precauciones": [
+        "Si la lectura es inestable o poco coherente, revisa la pila."
+      ],
+      "consultarSi": [
+        "Si la fiebre supera 39,5 °C, dura más de 3 días o viene con rigidez de cuello, confusión o dificultad para respirar."
+      ],
+      "complementarios": ["MED-008"]
+    },
+    "MED-004": {
+      "uso": "Hidratación de la piel seca del rostro.",
+      "instruccionesDeUso": "Aplica una capa fina sobre la piel limpia y seca, una o dos veces al día.",
+      "recomendaciones": [
+        "Haz una prueba en una zona pequeña (por ejemplo la muñeca) 24 horas antes del primer uso.",
+        "Úsala junto con protector solar durante el día."
+      ],
+      "precauciones": [
+        "Evita el contacto con los ojos."
+      ],
+      "consultarSi": [
+        "Si aparece enrojecimiento, picazón o ardor: suspende su uso y consulta."
+      ],
+      "complementarios": []
+    },
+    "MED-005": {
+      "uso": "Alivio de la tos; la miel ayuda a suavizar la garganta.",
+      "instruccionesDeUso": "La dosis depende del ingrediente activo de este jarabe, que no aparece en el catálogo: sigue la medida del vaso dosificador y las indicaciones de la etiqueta del frasco.",
+      "recomendaciones": [
+        "Usa siempre el vaso dosificador incluido, no cucharas de cocina.",
+        "Bebe líquidos en abundancia."
+      ],
+      "precauciones": [
+        "Si el producto contiene miel, no se debe dar a bebés menores de 12 meses.",
+        "No lo mezcles con otros productos para la tos o el resfriado sin preguntar al farmacéutico."
+      ],
+      "consultarSi": [
+        "Si la tos dura más de 7 días, o hay fiebre alta, dificultad para respirar, silbidos en el pecho o tos con sangre."
+      ],
+      "complementarios": ["MED-003"]
+    },
+    "MED-006": {
+      "uso": "Soporte y compresión en esguinces leves y torceduras.",
+      "instruccionesDeUso": "Enróllala desde la parte más lejana al cuerpo hacia arriba, con tensión media, cubriendo la mitad de la vuelta anterior.",
+      "recomendaciones": [
+        "Revisa cada cierto tiempo que los dedos conserven color y temperatura normales.",
+        "Lávala a mano y déjala secar para reutilizarla."
+      ],
+      "precauciones": [
+        "Si hay hormigueo, adormecimiento, color azulado o frío en la zona, afloja la venda de inmediato."
+      ],
+      "consultarSi": [
+        "Si hay hinchazón o dolor intenso, deformidad o no puedes apoyar la extremidad."
+      ],
+      "complementarios": ["MED-008"]
+    },
+    "MED-007": {
+      "uso": "Alivio del dolor leve a moderado y de la fiebre.",
+      "dosis": {
+        "adultos": "1 a 2 tabletas (500 a 1000 mg) cada 6 a 8 horas, solo mientras haya dolor o fiebre.",
+        "intervaloHoras": "6 a 8",
+        "maximoDiario": "Máximo 6 tabletas (3 g) en 24 horas sin indicación médica; nunca más de 8 tabletas (4 g).",
+        "calculo": { "unidadesPorToma": 1, "tomasPorDia": 3 },
+        "duracionMaximaDias": 5
+      },
+      "recomendaciones": [
+        "Puedes tomarlo con o sin comida.",
+        "Deja pasar al menos 6 horas entre tomas.",
+        "Revisa que otros productos que uses (por ejemplo para gripe o resfriado) no contengan también paracetamol."
+      ],
+      "precauciones": [
+        "Consulta antes de usarlo si tienes enfermedad del hígado o consumes alcohol con frecuencia.",
+        "Un exceso puede dañar el hígado aunque al principio no dé síntomas."
+      ],
+      "consultarSi": [
+        "Si el dolor dura más de 5 días o la fiebre más de 3 días.",
+        "Si tomaste más de la dosis máxima: busca atención médica de inmediato, aunque te sientas bien."
+      ],
+      "complementarios": ["MED-003"],
+      "alternativas": ["MED-002"]
+    },
+    "MED-008": {
+      "uso": "Antiséptico de uso externo para la piel intacta y el contorno de heridas pequeñas.",
+      "instruccionesDeUso": "Aplícalo con una gasa o algodón sobre la piel y deja secar al aire.",
+      "recomendaciones": [
+        "No lo uses directamente en heridas profundas ni quemaduras.",
+        "Cierra bien el frasco después de usarlo."
+      ],
+      "precauciones": [
+        "Solo uso externo: nunca lo ingieras.",
+        "Es inflamable: manténlo lejos de fuego, velas y cigarrillos.",
+        "Guárdalo fuera del alcance de los niños."
+      ],
+      "consultarSi": [
+        "Si se ingiere, llama de inmediato a emergencias.",
+        "Si la herida es profunda, sangra mucho o se ve infectada."
+      ],
+      "complementarios": ["MED-006"]
+    }
+  }
+}

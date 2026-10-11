@@ -101,8 +101,42 @@
   <!-- Notificaciones breves (no bloquean la pantalla) -->
   <div id="toastContainer" class="toast-container" aria-hidden="true"></div>
 
+  <!-- Asistente (chatbot): botón flotante abajo a la izquierda -->
+  <button type="button" id="chatToggle" class="chat-toggle" aria-expanded="false" aria-controls="chatPanel">
+    💬 Asistente
+  </button>
+
+  <section id="chatPanel" class="chat-panel" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden>
+    <div class="chat-header">
+      <h2 id="chatTitle">Asistente Droguería Ermita</h2>
+      <button type="button" id="chatClose" class="chat-close" aria-label="Cerrar asistente">&times;</button>
+    </div>
+    <p class="chat-disclaimer">
+      Orientación informativa: no reemplaza a un médico o químico farmacéutico. En una emergencia llama al 123.
+    </p>
+    <div class="chat-product">
+      <label for="chatProduct">Producto en consulta</label>
+      <select id="chatProduct">
+        <option value="">Ninguno seleccionado</option>
+      </select>
+    </div>
+    <div id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="Conversación con el asistente"></div>
+    <div id="chatChips" class="chat-chips">
+      <button type="button" class="chat-chip" data-chat-msg="¿Cuánto es el total de mi carrito?">💰 Total del carrito</button>
+      <button type="button" class="chat-chip" data-chat-msg="¿Cuál es la dosis y cada cuántas horas se toma?">💊 Dosis</button>
+      <button type="button" class="chat-chip" data-chat-msg="¿Qué me recomiendas con este producto?">👍 Recomendación</button>
+      <button type="button" class="chat-chip" data-chat-msg="Quiero calcular el tratamiento">🧮 Tratamiento</button>
+    </div>
+    <form id="chatForm" class="chat-form">
+      <label for="chatInput" class="visually-hidden">Escribe tu pregunta</label>
+      <input type="text" id="chatInput" placeholder="Ej. ¿Cuánto cuestan 3 paracetamol?" autocomplete="off">
+      <button type="submit" class="chat-send">Enviar</button>
+    </form>
+  </section>
+
   <div id="liveRegion" class="visually-hidden" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
+  <script src="chatbot.js"></script>
 </body>
 </html>
