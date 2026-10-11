@@ -3,23 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Botica - Catálogo de Productos</title>
+  <title>Droguería Ermita - Catálogo de Productos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <header class="site-header">
-    <h1>Botica</h1>
-    <button
-      type="button"
-      id="cartButton"
-      class="cart-button"
-      aria-haspopup="dialog"
-      aria-label="Abrir carrito de compras de demostración"
-    >
-      🛒 Carrito
-      <span id="cartCount" class="cart-count" aria-hidden="true">0</span>
-    </button>
+    <h1>Droguería Ermita</h1>
   </header>
 
   <main class="container">
@@ -95,6 +85,21 @@
       </div>
     </div>
   </div>
+
+  <!-- Botón flotante del carrito: siempre visible abajo a la derecha -->
+  <button
+    type="button"
+    id="cartButton"
+    class="cart-button"
+    aria-haspopup="dialog"
+    aria-label="Abrir carrito de compras de demostración"
+  >
+    🛒 Carrito
+    <span id="cartCount" class="cart-count" aria-hidden="true">0</span>
+  </button>
+
+  <!-- Notificaciones breves (no bloquean la pantalla) -->
+  <div id="toastContainer" class="toast-container" aria-hidden="true"></div>
 
   <div id="liveRegion" class="visually-hidden" role="status" aria-live="polite"></div>
 

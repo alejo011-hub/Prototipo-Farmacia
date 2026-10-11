@@ -20,6 +20,7 @@ const statusFilter = document.getElementById('statusFilter');
 const sortSelect = document.getElementById('sortSelect');
 const resultsCount = document.getElementById('resultsCount');
 const liveRegion = document.getElementById('liveRegion');
+const toastContainer = document.getElementById('toastContainer');
 
 const productModal = document.getElementById('productModal');
 const modalBody = document.getElementById('modalBody');
@@ -167,7 +168,41 @@ function escapeHtml(value) {
 }
 
 function announce(message) {
-  liveRegion.textContent = message;
+  // Se vacía primero para que un mensaje repetido se vuelva a anunciar.
+  liveRegion.textContent = '';
+  setTimeout(() => {
+    liveRegion.textContent = message;
+  }, 50);
+}
+
+let toastTimer = null;
+
+/**
+ * Muestra una notificación breve en la esquina inferior derecha.
+ * No bloquea la pantalla y desaparece sola; una nueva reemplaza a la anterior.
+ * tipo: 'success' (por defecto) o 'warning'.
+ */
+function showToast(titulo, detalle, tipo = 'success') {
+  toastContainer.innerHTML = '';
+
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${tipo}`;
+
+  const strong = document.createElement('strong');
+  strong.textContent = titulo;
+  toast.appendChild(strong);
+
+  if (detalle) {
+    const span = document.createElement('span');
+    span.textContent = detalle;
+    toast.appendChild(span);
+  }
+
+  toastContainer.appendChild(toast);
+  announce(detalle ? `${titulo}. ${detalle}` : titulo);
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.remove(), 3000);
 }
 
 // Genera las opciones de categoría a partir de los datos cargados
@@ -374,6 +409,8 @@ function findProductById(id) {
   return state.products.find((p) => p.id === id);
 }
 
+const MENSAJE_SIN_STOCK = 'No puedes pedir más productos de los disponibles';
+
 function addToCart(id) {
   const product = findProductById(id);
   if (!product) return;
@@ -382,22 +419,37 @@ function addToCart(id) {
   if (statusKey === 'out') return;
 
   const item = state.cart.find((entry) => entry.id === id);
+  const enCarrito = item ? item.cantidad : 0;
+
+  // No se permite superar las existencias registradas del producto.
+  if (enCarrito >= product.existencias) {
+    showToast(MENSAJE_SIN_STOCK, `${product.nombre}: ${product.existencias} disponibles`, 'warning');
+    return;
+  }
+
   if (item) {
     item.cantidad += 1;
   } else {
     state.cart.push({ id, cantidad: 1 });
   }
 
-  announce(`${product.nombre} agregado al carrito de demostración.`);
+  const cantidad = enCarrito + 1;
+  showToast(`${product.nombre} agregado al carrito`, `Cantidad de este producto en el carrito: ${cantidad}`);
   updateCartUI();
 }
 
 function setCartQuantity(id, cantidad) {
   const item = state.cart.find((entry) => entry.id === id);
-  if (!item) return;
+  const product = findProductById(id);
+  if (!item || !product) return;
 
   if (cantidad <= 0) {
     removeFromCart(id);
+    return;
+  }
+
+  if (cantidad > product.existencias) {
+    showToast(MENSAJE_SIN_STOCK, `${product.nombre}: ${product.existencias} disponibles`, 'warning');
     return;
   }
 
