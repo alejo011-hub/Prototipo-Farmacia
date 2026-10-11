@@ -6,6 +6,8 @@
   <title>Droguería Ermita - Catálogo de Productos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#f97316">
 <body>
 
   <header class="site-header">
@@ -138,5 +140,15 @@
 
   <script src="app.js"></script>
   <script src="chatbot.js"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(registration => console.log('ServiceWorker registrado con éxito'))
+        .catch(error => console.log('Fallo en registro de ServiceWorker:', error));
+    });
+  }
+</script>
 </body>
+
 </html>
