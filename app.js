@@ -7,6 +7,7 @@
  * no representa inventario compartido ni se sincroniza con productos.json.
  */
 const state = {
+  catalogoCargado: false,
   products: [],
   filteredProducts: [],
   cart: [],
@@ -207,6 +208,8 @@ function showToast(titulo, detalle, tipo = 'success') {
 
 // Genera las opciones de categoría a partir de los datos cargados
 function initializeFilters(products) {
+  const seleccion = categoryFilter.value;
+  categoryFilter.length = 1; // conserva solo "Todas las categorías"
   const categories = [...new Set(products.map((p) => p.categoria))].sort((a, b) => a.localeCompare(b, 'es'));
   categories.forEach((cat) => {
     const option = document.createElement('option');
@@ -214,6 +217,36 @@ function initializeFilters(products) {
     option.textContent = cat;
     categoryFilter.appendChild(option);
   });
+  categoryFilter.value = categories.includes(seleccion) ? seleccion : 'all';
+}
+
+/**
+ * Entrega un catálogo ya validado al flujo de la aplicación (por ejemplo, tras confirmar
+ * una importación). Reconstruye los filtros, vuelve a mostrar los productos y ajusta el
+ * carrito de demostración a las nuevas existencias. Devuelve los avisos de ajuste del carrito.
+ */
+function replaceCatalog(products) {
+  state.products = products;
+  state.catalogoCargado = true;
+
+  const ajustes = [];
+  state.cart = state.cart.filter((entry) => {
+    const product = findProductById(entry.id);
+    if (!product || product.existencias === 0) {
+      ajustes.push(`Se quitó del carrito ${product ? product.nombre : entry.id} porque ya no está disponible.`);
+      return false;
+    }
+    if (entry.cantidad > product.existencias) {
+      ajustes.push(`Se ajustó la cantidad de ${product.nombre} en el carrito a ${product.existencias}.`);
+      entry.cantidad = product.existencias;
+    }
+    return true;
+  });
+
+  initializeFilters(state.products);
+  applyFilters();
+  updateCartUI();
+  return ajustes;
 }
 
 // Ordena una copia de la lista según el criterio elegido
@@ -479,6 +512,13 @@ function getCartTotal() {
   }, 0);
 }
 
+function clearCart() {
+  state.cart = [];
+  updateCartUI();
+  closeCartBtn.focus();
+  showToast('Carrito vaciado', 'Quitaste todos los productos del carrito.');
+}
+
 function updateCartUI() {
   cartCountEl.textContent = String(getCartCount());
   renderCart();
@@ -515,6 +555,9 @@ function renderCart() {
 
   cartBody.innerHTML = `
     ${itemsHtml}
+    <div class="cart-clear-row" id="cartClearRow">
+      <button type="button" class="clear-cart-btn" id="clearCartBtn">🗑️ Vaciar carrito</button>
+    </div>
     <div class="cart-summary">
       <span>Total</span>
       <span>${escapeHtml(formatPrice(getCartTotal(), moneda))}</span>
@@ -536,6 +579,23 @@ function renderCart() {
       setCartQuantity(id, entry.cantidad - 1);
     });
     row.querySelector('[data-action="remove"]').addEventListener('click', () => removeFromCart(id));
+  });
+
+  // Vaciar todo el carrito, con una confirmación breve para evitar toques accidentales.
+  document.getElementById('clearCartBtn').addEventListener('click', () => {
+    const fila = document.getElementById('cartClearRow');
+    fila.innerHTML = `
+      <span class="clear-cart-question">¿Quitar todos los productos?</span>
+      <button type="button" class="clear-cart-confirm" id="confirmClearCartBtn">Sí, vaciar</button>
+      <button type="button" class="clear-cart-cancel" id="cancelClearCartBtn">Cancelar</button>
+    `;
+    const cancelBtn = document.getElementById('cancelClearCartBtn');
+    cancelBtn.focus();
+    document.getElementById('confirmClearCartBtn').addEventListener('click', clearCart);
+    cancelBtn.addEventListener('click', () => {
+      renderCart();
+      document.getElementById('clearCartBtn').focus();
+    });
   });
 
   const checkoutBtn = document.getElementById('checkoutBtn');
@@ -601,6 +661,8 @@ async function init() {
 
     initializeFilters(state.products);
     applyFilters();
+    state.catalogoCargado = true;
+    document.dispatchEvent(new CustomEvent('catalogo-cargado'));
   } catch (error) {
     console.error('Error al iniciar la aplicación:', error);
     renderLoadError(error);

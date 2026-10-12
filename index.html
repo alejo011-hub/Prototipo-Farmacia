@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Droguería Ermita - Catálogo de Productos</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="./manifest.json">
 </head>
 <body>
 
@@ -13,7 +12,7 @@
     <h1>Droguería Ermita</h1>
   </header>
 
-  <main class="container">
+  <main class="container" id="catalogView">
     <p class="demo-notice">
       Catálogo de demostración: los precios y existencias son de ejemplo y el carrito no descuenta inventario real.
     </p>
@@ -60,6 +59,78 @@
       <!-- Las tarjetas de producto se insertan aquí -->
     </section>
   </main>
+
+  <!-- Administrar inventario: vista separada del catálogo público (index.html#administrar) -->
+  <main class="container admin-view" id="adminView" hidden>
+    <a class="back-link" href="#catalogo">← Volver al catálogo</a>
+    <h2 id="adminTitle" tabindex="-1">Administrar inventario</h2>
+
+    <p class="demo-notice">
+      Los cambios que apliques aquí solo se ven en este navegador y se pierden al recargar la página:
+      GitHub Pages no guarda inventario. Para publicarlos, descarga <strong>productos.json</strong> y
+      reemplaza ese archivo en el repositorio. El Excel se lee en tu equipo y no se envía a ningún servidor.
+    </p>
+
+    <div id="adminMessage" class="admin-alert" role="status" hidden></div>
+    <p id="adminUnsaved" class="admin-alert admin-alert-warning" hidden>
+      Tienes cambios sin descargar. Descarga productos.json (paso 4) antes de cerrar esta página.
+    </p>
+
+    <section class="admin-step" aria-labelledby="stepTemplate">
+      <h3 id="stepTemplate">1. Descarga la plantilla</h3>
+      <p>
+        Columnas: id, nombre, categoria, caracteristicas (separadas por ;), precio, moneda, existencias y stockMinimo.
+        La columna imagen es opcional. La hoja "Instrucciones" explica cada una.
+      </p>
+      <div class="admin-actions">
+        <button type="button" class="btn" id="downloadTemplateBtn">Descargar plantilla (.xlsx)</button>
+        <button type="button" class="btn btn-secondary" id="downloadCurrentBtn" disabled>Descargar inventario actual (.xlsx)</button>
+      </div>
+    </section>
+
+    <section class="admin-step" aria-labelledby="stepFile">
+      <h3 id="stepFile">2. Selecciona el archivo Excel</h3>
+      <label for="excelFile">Archivo .xlsx</label>
+      <input type="file" id="excelFile" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" disabled>
+      <label class="admin-check" for="allowNew">
+        <input type="checkbox" id="allowNew" checked>
+        Permitir agregar productos nuevos (si lo desmarcas, los ids desconocidos se tratan como error)
+      </label>
+      <p id="fileStatus" role="status"></p>
+    </section>
+
+    <section class="admin-step" id="previewSection" aria-labelledby="previewTitle" hidden>
+      <h3 id="previewTitle" tabindex="-1">3. Revisa la vista previa</h3>
+      <p id="previewFile"></p>
+      <div id="previewSummary" class="summary-grid"></div>
+      <div id="previewVerdict"></div>
+      <div id="previewErrors"></div>
+      <div id="previewWarnings"></div>
+      <div id="previewNew"></div>
+      <div id="previewUpdates"></div>
+      <div id="previewUnchanged"></div>
+      <div class="admin-actions">
+        <button type="button" class="btn" id="confirmImportBtn" disabled>Confirmar importación</button>
+        <button type="button" class="btn btn-secondary" id="cancelImportBtn">Cancelar</button>
+      </div>
+    </section>
+
+    <section class="admin-step" aria-labelledby="stepResult">
+      <h3 id="stepResult">4. Descarga el resultado</h3>
+      <p>
+        Descarga el catálogo tal como se ve ahora y reemplaza el archivo productos.json del sitio para que
+        todos los visitantes vean los cambios.
+      </p>
+      <div class="admin-actions">
+        <button type="button" class="btn" id="downloadJsonBtn" disabled>Descargar productos.json</button>
+        <a class="btn btn-secondary btn-link" href="#catalogo">Ver catálogo actualizado</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="siteFooter">
+    <a href="#administrar">Administrar inventario</a>
+  </footer>
 
   <!-- Modal de detalle de producto -->
   <div class="modal-overlay" id="productModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
@@ -131,15 +202,7 @@
 
   <script src="app.js"></script>
   <script src="chatbot.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-          .then(reg => console.log('Service Worker registrado'))
-          .catch(err => console.log('Error al registrar SW:', err));
-      });
-    }
-  </script>
+  <script src="importador-excel.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>
-
