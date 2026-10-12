@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#f97316">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Droguería Ermita - Catálogo de Productos</title>
@@ -116,39 +114,21 @@
     <p class="chat-disclaimer">
       Orientación informativa: no reemplaza a un médico o químico farmacéutico. En una emergencia llama al 123.
     </p>
-    <div class="chat-product">
-      <label for="chatProduct">Producto en consulta</label>
-      <select id="chatProduct">
-        <option value="">Ninguno seleccionado</option>
-      </select>
+    <div id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="Conversación con el asistente" tabindex="0"></div>
+    <div id="chatOptions" class="chat-options" role="group" aria-label="Opciones del asistente">
+      <p class="chat-options-title">¿Qué quieres hacer?</p>
+      <button type="button" class="chat-option" data-chat-action="precio">💰 ¿Cuánto cuesta?</button>
+      <button type="button" class="chat-option" data-chat-action="agregar">🛒 Añadir al carrito</button>
+      <button type="button" class="chat-option" data-chat-action="dosis">💊 Dosis</button>
+      <button type="button" class="chat-option" data-chat-action="tratamiento">🧮 Tratamiento</button>
+      <button type="button" class="chat-option" data-chat-action="recomendacion">👍 Recomendación</button>
+      <button type="button" class="chat-option" data-chat-action="total">🧾 Total del carrito</button>
     </div>
-    <div id="chatLog" class="chat-log" role="log" aria-live="polite" aria-label="Conversación con el asistente"></div>
-    <div id="chatChips" class="chat-chips">
-      <button type="button" class="chat-chip" data-chat-msg="¿Cuánto es el total de mi carrito?">💰 Total del carrito</button>
-      <button type="button" class="chat-chip" data-chat-msg="¿Cuál es la dosis y cada cuántas horas se toma?">💊 Dosis</button>
-      <button type="button" class="chat-chip" data-chat-msg="¿Qué me recomiendas con este producto?">👍 Recomendación</button>
-      <button type="button" class="chat-chip" data-chat-msg="Quiero calcular el tratamiento">🧮 Tratamiento</button>
-    </div>
-    <form id="chatForm" class="chat-form">
-      <label for="chatInput" class="visually-hidden">Escribe tu pregunta</label>
-      <input type="text" id="chatInput" placeholder="Ej. ¿Cuánto cuestan 3 paracetamol?" autocomplete="off">
-      <button type="submit" class="chat-send">Enviar</button>
-    </form>
   </section>
 
   <div id="liveRegion" class="visually-hidden" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
   <script src="chatbot.js"></script>
-  <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(registration => console.log('ServiceWorker registrado con éxito'))
-        .catch(error => console.log('Fallo en registro de ServiceWorker:', error));
-    });
-  }
-</script>
 </body>
-
 </html>

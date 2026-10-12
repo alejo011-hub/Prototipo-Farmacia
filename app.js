@@ -305,12 +305,12 @@ function createProductCard(product) {
   card.className = 'card';
 
   card.innerHTML = `
-    <div class="card-img-wrapper" data-role="open-detail" tabindex="0" role="button" aria-label="Ver detalle de ${escapeHtml(product.nombre)}">
+    <div class="card-img-wrapper">
       <img src="${escapeHtml(product.imagen)}" alt="${escapeHtml(product.nombre)}" loading="lazy">
     </div>
     <div class="card-content">
       <span class="card-category">${escapeHtml(product.categoria)}</span>
-      <button type="button" class="card-title" data-role="open-detail">${escapeHtml(product.nombre)}</button>
+      <button type="button" class="card-title" data-role="open-detail" aria-haspopup="dialog">${escapeHtml(product.nombre)}</button>
       <ul class="card-features">
         ${product.caracteristicas.map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
       </ul>
@@ -318,21 +318,16 @@ function createProductCard(product) {
         <span class="card-price">${escapeHtml(formatPrice(product.precio, product.moneda))}</span>
         <span class="status-badge ${statusUI.class}">${escapeHtml(statusUI.text)}</span>
       </div>
-      <button type="button" class="add-to-cart-btn" data-role="add-to-cart" ${agotado ? 'disabled' : ''}>
+      <button type="button" class="add-to-cart-btn" data-role="add-to-cart" ${agotado ? 'aria-disabled="true"' : ''}>
         ${agotado ? 'Agotado' : 'Agregar al carrito'}
       </button>
     </div>
   `;
 
-  const openDetail = () => openProductModal(product);
-  card.querySelectorAll('[data-role="open-detail"]').forEach((el) => {
-    el.addEventListener('click', openDetail);
-    el.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openDetail();
-      }
-    });
+  // Toda la tarjeta abre el detalle; el botón de agregar al carrito no lo abre.
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('[data-role="add-to-cart"]')) return;
+    openProductModal(product);
   });
 
   const addBtn = card.querySelector('[data-role="add-to-cart"]');
