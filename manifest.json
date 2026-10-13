@@ -1,6 +1,6 @@
 {
-  "name": "Droguería Ermita",
-  "short_name": "Ermita",
+  "name": "Farmacia",
+  "short_name": "Farmacia",
   "description": "Catálogo y asistencia de Droguería Ermita",
   "start_url": "./index.html",
   "display": "standalone",
