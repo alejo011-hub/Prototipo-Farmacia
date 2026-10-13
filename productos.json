@@ -3,11 +3,7 @@
     "id": "MED-001",
     "nombre": "Vitamina C 1000 mg",
     "categoria": "Vitaminas",
-    "caracteristicas": [
-      "Frasco x 30 tabletas",
-      "Liberación prolongada",
-      "Sabor naranja"
-    ],
+    "caracteristicas": ["Frasco x 30 tabletas", "Liberación prolongada", "Sabor naranja"],
     "precio": 18900,
     "moneda": "COP",
     "existencias": 24,
@@ -18,10 +14,7 @@
     "id": "MED-002",
     "nombre": "Ibuprofeno 400 mg",
     "categoria": "Analgésicos",
-    "caracteristicas": [
-      "Caja x 10 cápsulas",
-      "Acción rápida"
-    ],
+    "caracteristicas": ["Caja x 10 cápsulas", "Acción rápida"],
     "precio": 5500,
     "moneda": "COP",
     "existencias": 5,
@@ -32,11 +25,7 @@
     "id": "MED-003",
     "nombre": "Termómetro digital",
     "categoria": "Equipos médicos",
-    "caracteristicas": [
-      "Lectura en 10 segundos",
-      "Alarma de fiebre",
-      "Resistente al agua"
-    ],
+    "caracteristicas": ["Lectura en 10 segundos", "Alarma de fiebre", "Resistente al agua"],
     "precio": 12000,
     "moneda": "COP",
     "existencias": 0,
@@ -47,11 +36,7 @@
     "id": "MED-004",
     "nombre": "Crema hidratante facial",
     "categoria": "Cuidado personal",
-    "caracteristicas": [
-      "Presentación 50 ml",
-      "Para piel seca",
-      "Hipoalergénica"
-    ],
+    "caracteristicas": ["Presentación 50 ml", "Para piel seca", "Hipoalergénica"],
     "precio": 45000,
     "moneda": "COP",
     "existencias": 15,
@@ -62,11 +47,7 @@
     "id": "MED-005",
     "nombre": "Jarabe para la tos con miel",
     "categoria": "Respiratorio",
-    "caracteristicas": [
-      "Frasco 120 ml",
-      "Sabor a miel",
-      "Incluye vaso dosificador"
-    ],
+    "caracteristicas": ["Frasco 120 ml", "Sabor a miel", "Incluye vaso dosificador"],
     "precio": 16500,
     "moneda": "COP",
     "existencias": 0,
@@ -77,11 +58,7 @@
     "id": "MED-006",
     "nombre": "Venda elástica 5x5",
     "categoria": "Primeros auxilios",
-    "caracteristicas": [
-      "Presentación 5 cm x 5 m",
-      "Compresión media",
-      "Reutilizable"
-    ],
+    "caracteristicas": ["Presentación 5 cm x 5 m", "Compresión media", "Reutilizable"],
     "precio": 3200,
     "moneda": "COP",
     "existencias": 8,
@@ -92,10 +69,7 @@
     "id": "MED-007",
     "nombre": "Paracetamol 500 mg",
     "categoria": "Analgésicos",
-    "caracteristicas": [
-      "Caja x 20 tabletas",
-      "Alivio del dolor"
-    ],
+    "caracteristicas": ["Caja x 20 tabletas", "Alivio del dolor"],
     "precio": 4800,
     "moneda": "COP",
     "existencias": 120,
@@ -106,171 +80,11 @@
     "id": "MED-008",
     "nombre": "Alcohol antiséptico 70%",
     "categoria": "Primeros auxilios",
-    "caracteristicas": [
-      "Frasco 250 ml",
-      "Uso tópico",
-      "Acción rápida"
-    ],
+    "caracteristicas": ["Frasco 250 ml", "Uso tópico", "Acción rápida"],
     "precio": 6200,
     "moneda": "COP",
     "existencias": 3,
     "stockMinimo": 10,
     "imagen": "https://placehold.co/400x300/e0f2fe/0369a1?text=Alcohol+70%25"
-  },
-  {
-    "id": "MED-009",
-    "nombre": "AA",
-    "categoria": "Vitaminas",
-    "caracteristicas": [
-      "aa"
-    ],
-    "precio": 18000,
-    "moneda": "COP",
-    "existencias": 20,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-010",
-    "nombre": "BB",
-    "categoria": "Vitaminas",
-    "caracteristicas": [
-      "bb"
-    ],
-    "precio": 22000,
-    "moneda": "COP",
-    "existencias": 650,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-011",
-    "nombre": "CC",
-    "categoria": "Analgesico",
-    "caracteristicas": [
-      "cc"
-    ],
-    "precio": 30000,
-    "moneda": "COP",
-    "existencias": 4,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-012",
-    "nombre": "DD",
-    "categoria": "Primeros auxilios",
-    "caracteristicas": [
-      "dd"
-    ],
-    "precio": 300,
-    "moneda": "COP",
-    "existencias": 18,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-013",
-    "nombre": "EE",
-    "categoria": "Respiratorio",
-    "caracteristicas": [
-      "ee"
-    ],
-    "precio": 1000,
-    "moneda": "COP",
-    "existencias": 6,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-014",
-    "nombre": "FF",
-    "categoria": "Vitaminas",
-    "caracteristicas": [
-      "ff"
-    ],
-    "precio": 2000,
-    "moneda": "COP",
-    "existencias": 49,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-015",
-    "nombre": "GG",
-    "categoria": "Primeros auxilios",
-    "caracteristicas": [
-      "gg"
-    ],
-    "precio": 8900,
-    "moneda": "COP",
-    "existencias": 15,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-016",
-    "nombre": "HH",
-    "categoria": "Respiratorio",
-    "caracteristicas": [
-      "hh"
-    ],
-    "precio": 3000,
-    "moneda": "COP",
-    "existencias": 1846,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-017",
-    "nombre": "II",
-    "categoria": "Cuidado personal",
-    "caracteristicas": [
-      "ii"
-    ],
-    "precio": 520000,
-    "moneda": "COP",
-    "existencias": 54,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-018",
-    "nombre": "JJ",
-    "categoria": "Cuidado personal",
-    "caracteristicas": [
-      "jj"
-    ],
-    "precio": 12000,
-    "moneda": "COP",
-    "existencias": 84,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-019",
-    "nombre": "KK",
-    "categoria": "Analgesico",
-    "caracteristicas": [
-      "kk"
-    ],
-    "precio": 7000,
-    "moneda": "COP",
-    "existencias": 864,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
-  },
-  {
-    "id": "MED-020",
-    "nombre": "LL",
-    "categoria": "Primeros auxilios",
-    "caracteristicas": [
-      "ll"
-    ],
-    "precio": 700,
-    "moneda": "COP",
-    "existencias": 8,
-    "stockMinimo": 1,
-    "imagen": "images/sin-imagen.svg"
   }
 ]
