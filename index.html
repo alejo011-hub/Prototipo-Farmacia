@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Droguería Ermita - Catálogo de Productos</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="./manifest.json">
 </head>
 <body>
 
@@ -204,5 +205,14 @@
   <script src="chatbot.js"></script>
   <script src="importador-excel.js"></script>
   <script src="admin.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(reg => console.log('Service Worker registrado'))
+          .catch(err => console.log('Error al registrar SW:', err));
+      });
+    }
+  </script>
 </body>
 </html>
